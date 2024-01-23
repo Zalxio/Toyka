@@ -7,6 +7,33 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import {default as HisV} from './views/screens/historicalV';
+
+const Tab = createBottomTabNavigator();
+
+function App(): React.JSX.Element {
+
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Historique" component={HisV} />
+        <Tab.Screen name="Recos" component={HisV} />
+        <Tab.Screen name="Scan" component={HisV} />
+        <Tab.Screen name="Classement" component={HisV} />
+        <Tab.Screen name="Recherche" component={HisV} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+/* 
+import React from 'react';
+import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -116,3 +143,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+ */
